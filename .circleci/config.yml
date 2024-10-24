@@ -36,7 +36,7 @@ jobs:
           # Must be relative path from root
           paths:
             - ./
-            
+
   hello-job-getter:
     executor: node # use the `node` executor defined above
     steps:
@@ -54,4 +54,8 @@ workflows:
   my-workflow:
     jobs:
       - hello-job
+      - hello-job-setter
+      - hello-job-getter:
+          required:
+            - hello-job-setter
 
