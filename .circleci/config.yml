@@ -56,6 +56,6 @@ workflows:
       - hello-job
       - hello-job-setter
       - hello-job-getter:
-          required:
+          requires:
             - hello-job-setter
 
